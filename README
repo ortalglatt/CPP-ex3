@@ -1,0 +1,25 @@
+cpp_ex3
+ortal.netzer
+312416845
+######
+
+In this exercise, we built a generic HashMap class by using templates.
+We also built a program that gets a path to a file that contains a list of spam words, a path to a
+file that contains a text massage and a threshold, and check what is the spam score of the given
+massage and by using the given threshold, it will print if the massage is a spam massage or not.
+
+The HashMap class contains all the needed API methods, and a few private method:
+* A method that gets a value of the keys type and calculates it's hash code by using the current
+  capacity of the map.
+* A method that resize the map by getting the new size, allocate new memory, rehash all the words
+  from the old map to the new one, and delete the old map memory.
+
+I also decided to make the iterator nested class in the HashMap class private, because the user will
+get the iterator from the public begin and end methods of the HashMap class. The methods of the
+iterator are public, so the user can increment and compare the iterator.
+
+My spam detector program create a new HashMap object, and put every spam word as a key, and the
+word's score as the value. After that, it will create a string from the massage file, go through
+all the spam words and calculate the massage spam score by counting how many times every word appear
+in the massage. After that, the program will check if the threshold is bigger or smaller than the
+massage spam score and will print the correct spam massage (SPAM / NOT_SPAM).
